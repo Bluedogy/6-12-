@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      function nightDayHandler(self){
+    var target = document.querySelector('body');
+    if(self.value === '반짝') {
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      document.querySelector('#night_day').value = '짝반';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+        alist[i].style.color = 'aqua';
+        i = i + 1;
+      }
+    } else {
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color = 'black';
+    self.value = '반짝';
+
+    var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+        alist[i].style.color = 'blueviolet';
+        i = i + 1;
+        }
+      }
+    }
+    var Body = {
+      setColor:function (color){
+        document.querySelector('body').style.color = color;
+      },
+      setBackgroundColor:function (color){
+        document.querySelector('body').style.backgroundColor = color;
+      }
+    }
+    </script>
+    <style>
+      a {
+        color: aqua;
+        text-decoration: none;
+      }
+      h1 {
+        color: blue;
+        font-size: 30px;
+        text-align: center;
+        margin: 5px;
+        padding: 10px;
+        /* width: 200px; */
+        border-bottom: 10px solid blueviolet;
+        border-width: 2px;
+      }
+      #active {
+        color: indigo;
+      }
+      .saw {
+        color: goldenrod;
+      }
+      h3 {
+        border-right: 2px solid blueviolet;
+        /* width: 200px; */
+        margin: 0;
+        padding: 20px 0;
+      }
+      #grid {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+      }
+      #grid > #sidebar {
+        padding-left: 33px;
+      }
+      #grid > #article {
+        padding-left: 25px;
+      }
+      @media(max-width:700px){
+          #grid{
+              display: block;
+          }
+          h3 {
+        border-right:none;
+          }
+        h1 {
+        border-bottom:none;
+      }}
+    </style>
+    <title>세일고 익스플로러
+    </title>
+  </head>
+  <body>
+  <input type="text" onchange="alert('changed')">
+  <input type="text" onkeydown="alert('key down')">
+    <h1 style="background-color:rgb(0, 255, 136)">세일고 익스플로러</h1>
+    
+    <input type="button" value="반" onclick="
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color = 'black';">
+    
+    <input type="button" value="짝" onclick="
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'white';">
+
+    <input id="night_day" type="button" value="반짝" onclick="
+    nightDayHandler(this);
+    ">
+    
+    <div id="grid">
+      <div id="sidebar">
+        <h2><span style="font-weight:bold;">홈페이지 링크들</span></h2>
+        <h3>
+          <a href="http://seilhs.icehs.kr/main.do">세일고등학교 홈페이지</a>
+        </h3>
+        <h3>
+          <a href="https://opentutorials.org/course/1" style="color: yellow"
+            >생활코딩</a
+          >
+        </h3>
+        <h3><a href="https://www.ebsoc.co.kr/">EBS 온라인 클래스</a></h3>
+        <h3>
+          <a
+            href="https://us02web.zoom.us/j/2695212731?pwd=SDEvYnJMMXJGL0ZCNkFKR3d6ZSthQT09"
+            >Zoom</a
+          >
+        </h3>
+      </div>
+      <div id="article">
+        <h4>세일고등학교에 대해(출처: 나무위키)</h4>
+        <ol>
+          <li>
+            <a href="index.html"><font color="red" id="active">역사</font></a>
+          </li>
+          <li>
+            <a href="1.html"><font color="red" class="saw">특징(+연습장)</font></a>
+          </li>
+          <li>
+            <a href="2.html"><font color="red" class="saw">입시</font></a>
+          </li>
+        </ol>
+        <div>
+          처음 웹페이지 만들어보니까, 재미있지만 아직 부족한 점이 많은 것
+          같아요.
+          <br />앞으로도 열심히 활동하겠습니다! <br /><img
+            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimage.nmv.naver.net%2Fblog_2021_02_21_1828%2F1433d01f-741f-11eb-8e44-a0369ff95678_01.jpg&type=sc960_832"
+            width="10%"
+          />
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 50px">만든이: 10904 기병주</p>
+  </body>
+</html>
